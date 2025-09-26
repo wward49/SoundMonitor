@@ -2,6 +2,10 @@
 This device was an idea thrown at me from my brother-in-law who is an IT guy. He wanted to make a baby monitor that alerts you to your baby crying if you are gaming. I thought it would be a cool thing to try and design and get working, just to see if I could get something resembling a baby monitor working. It was nice getting more exprience with embedded systems...the previous project I had worked on was a wireless thermometer with the esp32, arduino, LED screen, and Weather API's. 
 ## Process
 I started by setting up the componenets on a breadboard I bought. I had to find a pinout diagram for the particular microcontroller I had online...and there are several esp32's with little differences on where the analog and dialog pins are and the out pins and ground...so that was fun. Once I got the microphone and LED and battery pack wired, I wrote a simple program that just lit up the LED when the sound was detected. It didn't work. The theme of this project is that nothing ever works the first time. Or Second. I found out there is a thing called a potentiometer that you need to adjest with a screwdriver in order to get it to pick up sound. So I tried tuning it some. And then it still didn't work. I'll skip to the solution...the microphone was broken. I bought a new one and boom...good to go...we got sound being picked up (usually claps or whistles) and an LED that lights up. The next step was to send that bool trigger to a Desktop Application instead of an LED. 
+<p>
+  <img src="https://github.com/wward49/SoundMonitor/blob/main/20250926_143256.jpg" width="600">
+  <img src="https://github.com/wward49/SoundMonitor/blob/main/20250926_143315.jpg" width="600">
+</p>
 
 I created a WPF Application with C# in Visual Studio. The UI was super quick and simple...nothing fancy at all. This part was not to hard...the logic was pretty simple...just wait for the trigger from the ESP and when it gets it...do soemthing (Display a Message in this case). The problem was getting the ESP32 and the Application on the same network.
 
