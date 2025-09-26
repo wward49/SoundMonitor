@@ -9,7 +9,7 @@ I started by setting up the componenets on a breadboard I bought. I had to find 
 
 I created a WPF Application with C# in Visual Studio. The UI was super quick and simple...nothing fancy at all. This part was not to hard...the logic was pretty simple...just wait for the trigger from the ESP and when it gets it...do soemthing (Display a Message in this case). The problem was getting the ESP32 and the Application on the same network.
 <p>
-  <img src="https://github.com/wward49/SoundMonitor/blob/main/Screenshot%202025-09-26%20160607.png" width="300">
+  <img src="https://github.com/wward49/SoundMonitor/blob/main/Screenshot%202025-09-26%20160607.png" width="600">
 </p>
 At first I just hard coded my router's information into the ESP32. That worked well enough. But I didnt want to use the device only at my house. I wanted to be able to take it ANYWHERE and have it hop onto the same network the Application was running on. Because of this I had to have a way to dynamically get the username and Password of the network the Application was on, and pass it to the ESP.  The ESP32 can act as a host for a LAN and accept clients, so the plan was to get a username and password string, connect over to the esp's hosted network, drop off the strings, then connect both the application computer and the device back to the original network.
 
